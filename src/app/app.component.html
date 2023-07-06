@@ -1,21 +1,13 @@
-<hr />
-<input type="text" [(ngModel)]="username" name="username" />
-<hr />
-<p
-  *ngIf="username; else nouser"
-  [ngStyle]="{ 'background-color': getColor() }"
-  [ngClass]="{ online: username === 'online' }"
->
-  {{ username }}
-</p>
-<ng-template #nouser>
-  <p>no user</p>
-</ng-template>
-<hr />
-<button
-  class="btn btn-primary"
-  (click)="onReset($event)"
-  [disabled]="!username"
->
-  Reset
+<button (click)="toggleSecretPassword()" class="btn btn-primary">
+  Display Details
 </button>
+<p *ngIf="showPassword">Secret Password = tuna</p>
+<div>
+  <p
+    *ngFor="let log of toggleLog; let i = index"
+    [ngStyle]="{ 'background-color': log.count > 5 ? 'blue' : 'white' }"
+    [ngClass]="{ 'txt-white': log.count > 5 }"
+  >
+    {{ log.count }}.{{ log.timestamp }}
+  </p>
+</div>

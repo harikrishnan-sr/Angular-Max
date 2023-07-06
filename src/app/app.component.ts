@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  username = 'Max';
+  showPassword = true;
+  toggleLog: { timestamp: Date; count: number }[] = [];
 
-  onReset(event: Event) {
-    this.username = '';
-  }
-
-  getColor() {
-    return this.username === 'online' ? 'green' : 'red';
+  toggleSecretPassword() {
+    this.showPassword = !this.showPassword;
+    this.toggleLog.push({
+      timestamp: new Date(),
+      count: this.toggleLog.length + 1,
+    });
   }
 }
