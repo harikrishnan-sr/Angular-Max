@@ -9,8 +9,14 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAAlertComponent } from './success-aalert/success-aalert.component';
 
 @NgModule({
-  declarations: [AppComponent, ServerComponent, ServersComponent, WarningAlertComponent, SuccessAAlertComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    ServerComponent,
+    ServersComponent,
+    WarningAlertComponent,
+    SuccessAAlertComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

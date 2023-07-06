@@ -1,2 +1,12 @@
-<app-warning-alert></app-warning-alert>
-<app-success-alert></app-success-alert>
+<hr />
+<input type="text" [(ngModel)]="username" name="username" />
+<hr />
+<p>{{ username }}</p>
+<hr />
+<button
+  class="btn btn-primary"
+  (click)="onReset($event)"
+  [disabled]="!username"
+>
+  Reset
+</button>

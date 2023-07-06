@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Max';
+  username = 'Max';
+
+  onReset(event: Event) {
+    this.username = '';
+  }
 }
