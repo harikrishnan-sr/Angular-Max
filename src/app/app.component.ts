@@ -11,4 +11,8 @@ export class AppComponent {
   onReset(event: Event) {
     this.username = '';
   }
+
+  getColor() {
+    return this.username === 'online' ? 'green' : 'red';
+  }
 }

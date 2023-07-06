@@ -1,7 +1,16 @@
 <hr />
 <input type="text" [(ngModel)]="username" name="username" />
 <hr />
-<p>{{ username }}</p>
+<p
+  *ngIf="username; else nouser"
+  [ngStyle]="{ 'background-color': getColor() }"
+  [ngClass]="{ online: username === 'online' }"
+>
+  {{ username }}
+</p>
+<ng-template #nouser>
+  <p>no user</p>
+</ng-template>
 <hr />
 <button
   class="btn btn-primary"
