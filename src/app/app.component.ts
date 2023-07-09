@@ -3,17 +3,26 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showPassword = true;
-  toggleLog: { timestamp: Date; count: number }[] = [];
+  serverElements = [];
+  newServerName = '';
+  newServerContent = '';
 
-  toggleSecretPassword() {
-    this.showPassword = !this.showPassword;
-    this.toggleLog.push({
-      timestamp: new Date(),
-      count: this.toggleLog.length + 1,
+  onAddServer() {
+    this.serverElements.push({
+      type: 'server',
+      name: this.newServerName,
+      content: this.newServerContent
+    });
+  }
+
+  onAddBlueprint() {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: this.newServerName,
+      content: this.newServerContent
     });
   }
 }
