@@ -6,26 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  serverElements = [
-    { type: 'server', name: 'Testserver', content: 'Just a test' },
-  ];
+  eventCount = 0;
 
-  onServerAdded(serverData: { serverName: string; serverContent: string }) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent,
-    });
-  }
+  oddComponents: number[] = [];
+  evenComponents: number[] = [];
 
-  onBlueprintAdded(blueprintData: {
-    serverName: string;
-    serverContent: string
-  }) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: blueprintData.serverName,
-      content: blueprintData.serverContent,
-    });
+  onGameEvent() {
+    this.eventCount++;
+    console.log(this.eventCount);
+    if (this.eventCount % 2 === 0) {
+      this.evenComponents.push(this.eventCount);
+    } else {
+      this.oddComponents.push(this.eventCount);
+    }
   }
 }
