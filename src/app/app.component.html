@@ -5,8 +5,14 @@
         Only show odd numbers
       </button>
       <br /><br />
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let number of numbers">
+      <ul class="list-group" *appUnless="false">
+        <li
+          appBetterHighlight
+          [defaultColor]="'yellow'"
+          [highlightColor]="'red'"
+          class="list-group-item"
+          *ngFor="let number of numbers"
+        >
           {{ number }}
         </li>
       </ul>
